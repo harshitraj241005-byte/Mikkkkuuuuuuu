@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#170a17">
+<title>For Bhumika ❤️</title>
+<style>
+:root{--pink:#ff3f73;--pink2:#ff6a91;--bg:#170a17;--card:#241226;--text:#fff8fb;--muted:#d9cbd5}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+body{min-height:100dvh;position:relative}
+body:before{content:"";position:fixed;inset:-20%;background:radial-gradient(circle at 50% 35%,#4b163b 0,#260d26 35%,#170a17 72%);z-index:-3}
+#hearts{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:-1}
+.heart{position:absolute;bottom:-30px;color:#ff4f7b;opacity:.28;font-size:18px;animation:float 7s linear infinite}
+@keyframes float{from{transform:translateY(0) rotate(0);opacity:0}15%{opacity:.28}to{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+.screen{position:absolute;inset:0;padding:max(22px,env(safe-area-inset-top)) 18px max(22px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;opacity:0;transform:translateX(24px) scale(.985);pointer-events:none;transition:opacity .45s ease,transform .45s ease}
+.screen.active{opacity:1;transform:none;pointer-events:auto}
+.kicker{font-size:14px;letter-spacing:2px;text-transform:uppercase;color:#ff9bb5;margin-bottom:12px}
+h1{font-size:clamp(34px,10vw,58px);line-height:1.03;margin:0 0 16px;font-weight:800}
+h2{font-size:clamp(27px,8vw,44px);line-height:1.08;margin:0 0 14px}
+p{font-size:clamp(17px,4.7vw,22px);line-height:1.45;margin:5px 0;color:var(--muted)}
+.big{font-size:clamp(21px,5.5vw,29px);color:#fff}
+.emoji{font-size:clamp(44px,14vw,75px);margin-bottom:10px}
+button{border:0;color:white;background:linear-gradient(135deg,var(--pink),var(--pink2));font-size:17px;font-weight:800;border-radius:999px;padding:15px 24px;min-height:54px;box-shadow:0 12px 35px rgba(255,63,115,.28);cursor:pointer;margin-top:20px}
+button:active{transform:scale(.97)}
+.subtle{font-size:13px;color:#bfaebb;margin-top:12px}
+.meter{width:min(330px,86vw);height:13px;border-radius:99px;background:#43243e;overflow:hidden;margin:22px auto 8px;box-shadow:inset 0 2px 6px #10070f}
+.fill{height:100%;width:0;background:linear-gradient(90deg,#ff5a83,#ff9bb5);border-radius:inherit;transition:width 1.7s ease}
+.percent{font-size:14px;color:#f6d9e3}
+.photo-wrap{width:min(420px,91vw);height:min(57dvh,570px);display:flex;align-items:center;justify-content:center;position:relative}
+.polaroid{width:100%;height:100%;background:#fff;border-radius:16px;padding:11px 11px 0;box-shadow:0 18px 55px rgba(0,0,0,.45);transform:rotate(-1deg);display:flex;flex-direction:column}
+.polaroid img{width:100%;height:calc(100% - 78px);object-fit:cover;border-radius:10px 10px 5px 5px;background:#eee;display:block}
+.caption{height:78px;display:flex;align-items:center;justify-content:center;color:#261b27;font-family:"Segoe Print","Bradley Hand",cursive;font-size:clamp(17px,4.5vw,23px);line-height:1.2;font-weight:700;padding:8px}
+.dots{display:flex;gap:8px;margin:15px 0 0;justify-content:center}
+.dot{width:9px;height:9px;border-radius:50%;background:#6f586b}.dot.active{background:#ff4b7a;transform:scale(1.25)}
+.photo-btn{margin-top:14px;width:min(370px,88vw)}
+.envelope{width:min(360px,88vw);height:210px;position:relative;margin:10px auto 0;cursor:pointer;filter:drop-shadow(0 16px 30px rgba(0,0,0,.35))}
+.env-back{position:absolute;inset:20px 0 0;background:#d94768;border-radius:10px}
+.env-paper{position:absolute;left:9%;right:9%;top:0;height:155px;background:#fffdfc;border-radius:6px;transition:transform .8s ease;z-index:2;box-shadow:0 4px 10px rgba(0,0,0,.18)}
+.env-front{position:absolute;inset:65px 0 0;background:#f05b78;clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);z-index:3;border-radius:0 0 10px 10px}
+.seal{position:absolute;z-index:4;left:50%;top:105px;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#ff3f73;display:grid;place-items:center;font-size:23px;box-shadow:0 4px 12px rgba(0,0,0,.2)}
+.envelope.open .env-paper{transform:translateY(-95px)}
+.letter{width:min(440px,91vw);height:min(52dvh,430px);background:#fffaf7;color:#251923;border-radius:18px;padding:24px 22px;box-shadow:0 18px 55px rgba(0,0,0,.42);display:flex;flex-direction:column;justify-content:center;overflow:hidden;text-align:left}
+.letter p{font-family:"Segoe Print","Bradley Hand",cursive;color:#2c1d29;font-size:clamp(13px,3.65vw,17px);line-height:1.42;margin:4px 0}
+.letter .love{font-size:clamp(18px,5vw,25px);text-align:center;margin-top:9px}
+.call{font-size:clamp(42px,14vw,70px);margin-bottom:8px}
+@media(max-height:680px){.photo-wrap{height:52dvh}.caption{height:65px;font-size:16px}.polaroid img{height:calc(100% - 65px)}button{margin-top:13px;padding:12px 21px;min-height:48px}.letter{height:50dvh;padding:18px}.letter p{font-size:13px;line-height:1.35}}
+</style>
+</head>
+<body>
+<div id="hearts"></div>
+<audio id="music" preload="auto" loop><source src="song.mp3" type="audio/mpeg"></audio>
+
+<section class="screen active" id="s1">
+  <div class="emoji">🥺❤️</div>
+  <h1>Bhumika…❤️</h1>
+  <p>We literally talked the whole day.</p><p>And yet…</p><p class="big">I miss you🥺❤️</p>
+  <button onclick="go(2)">Why? 👀</button>
+  <div class="subtle">Tap anywhere once to play the song 🎵</div>
+</section>
+
+<section class="screen" id="s2">
+  <div class="kicker">Honestly…</div>
+  <h2>I don't know.</h2>
+  <p>Maybe because talking to you makes me want to talk to you even more❤️</p>
+  <div class="meter"><div class="fill" id="fill"></div></div><div class="percent" id="percent">0% miss you</div>
+  <p class="big">Yeah… this is getting embarrassing😭❤️</p>
+  <button onclick="go(3)">Next 👀</button>
+</section>
+
+<section class="screen" id="s3">
+  <div class="kicker">A few reasons</div>
+  <div class="photo-wrap"><div class="polaroid"><img id="photo" src="photo1.jpg" alt="Memory with Bhumika"><div class="caption" id="caption">I miss this smile❤️</div></div></div>
+  <div class="dots" id="dots"></div>
+  <button class="photo-btn" id="nextPhoto" onclick="nextMemory()">Tap for next memory ✨</button>
+</section>
+
+<section class="screen" id="s4">
+  <div class="kicker">For Bhumika</div>
+  <h2>Whenever I miss you❤️</h2>
+  <div class="envelope" id="envelope" onclick="openLetter()"><div class="env-back"></div><div class="env-paper"></div><div class="env-front"></div><div class="seal">❤️</div></div>
+  <p class="subtle" id="envHint">Tap the envelope 💌</p>
+</section>
+
+<section class="screen" id="s5">
+  <div class="call">🥺📞❤️</div>
+  <h2>Bhumika…</h2>
+  <p>Even after talking to you the whole day…</p><p>I still want your presence.</p><p>Because apparently, one conversation with you is never enough for me🥺❤️</p>
+  <p class="big">I miss you❤️</p>
+  <button onclick="callMe(this)">Talk to me ❤️</button>
+</section>
+
+<script>
+const memories=[
+ ['photo1.jpg','I miss this smile❤️'],
+ ['photo2.jpg','I miss seeing you happy.'],
+ ['photo3.jpg','I miss your presence.'],
+ ['photo4.jpg','I miss your random little things. 😭'],
+ ['photo5.jpg','I miss your natkhat rashile nitamb🫦'],
+ ['photo6.jpg','I miss your moans'],
+ ['photo7.jpg','Okay…maybe I miss you a little too much.'],
+ ['photo8.jpg','Actually…definitely too much 🥺'],
+ ['photo9.jpg','Okay, I think you get it now.']
+];
+let current=0,letterOpened=false;
+const music=document.getElementById('music');
+function playMusic(){music.volume=.45;music.play().catch(()=>{});document.removeEventListener('click',playMusic)}
+document.addEventListener('click',playMusic,{once:true});
+function go(n){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById('s'+n).classList.add('active');if(n===2){setTimeout(()=>{document.getElementById('fill').style.width='100%';let p=0;const t=setInterval(()=>{p+=5;document.getElementById('percent').textContent=Math.min(p,100)+'% miss you';if(p>=100)clearInterval(t)},80)},250)}if(n===3)renderMemory()}
+function renderMemory(){document.getElementById('photo').src=memories[current][0];document.getElementById('caption').textContent=memories[current][1];document.getElementById('dots').innerHTML=memories.map((_,i)=>`<span class="dot ${i===current?'active':''}"></span>`).join('');document.getElementById('nextPhoto').textContent=current===memories.length-1?'I MISS YOU. ❤️':'Tap for next memory ✨'}
+function nextMemory(){if(current<memories.length-1){current++;renderMemory()}else{go(4)}}
+function openLetter(){if(letterOpened)return;letterOpened=true;document.getElementById('envelope').classList.add('open');document.getElementById('envHint').textContent='Still not done… ❤️';setTimeout(()=>{showLetter()},900)}
+function showLetter(){document.getElementById('s4').innerHTML=`<div class="kicker">For Bhumika, whenever I miss you❤️</div><div class="letter"><p>Mikkuuuu I'm missing you so much.....Bahut zayda yaad aa li🥺🥺</p><p>And today you are going to be busy the whole day....aur tu faltu ka yeh mast soch kr ki aisa ho rha toh teri kya glti and all😭😭</p><p>I love you so so much baccha❤️</p><p>You are just mine💋💋💋</p></div><button onclick="go(5)">One more thing ❤️</button>`}
+function callMe(btn){btn.textContent='Calling Mikku... 🥺📞❤️';btn.disabled=true}
+for(let i=0;i<14;i++){const h=document.createElement('span');h.className='heart';h.textContent='♥';h.style.left=Math.random()*100+'%';h.style.animationDelay=(Math.random()*7)+'s';h.style.fontSize=(12+Math.random()*13)+'px';document.getElementById('hearts').appendChild(h)}
+</script>
+</body>
+</html>
