@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>For Bhumika ❤️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Great+Vibes&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="particleCanvas"></canvas>
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+
+  <audio id="bgSong" src="assets/song.mp3" preload="auto" loop></audio>
+
+  <button id="musicToggle" class="music-toggle" aria-label="Toggle Music">
+    <span id="musicIcon">🎵</span>
+  </button>
+
+  <main class="app-viewport">
+    <section id="screen1" class="screen active">
+      <div class="glass-card fade-up">
+        <h1 class="title-serif">Bhumika…❤️</h1>
+        <div class="narrative-group">
+          <p class="anim-line delay-1 subtitle">We literally talked the whole day.</p>
+          <div class="pause-dots delay-2"><span>.</span><span>.</span><span>.</span></div>
+          <p class="anim-line delay-3 em-text">And yet…</p>
+          <p class="anim-line delay-4 highlight-miss">I miss you 🥺❤️</p>
+        </div>
+        <div class="btn-wrap delay-5">
+          <button class="romantic-btn glow-heartbeat" onclick="goToScreen(2)">Why? 👀</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen2" class="screen">
+      <div class="glass-card">
+        <h2 class="soft-quote anim-fade delay-1">“I don't know.”</h2>
+        <p class="emotional-statement anim-fade delay-2">
+          Maybe because talking to you<br />
+          <span>makes me want to talk to you even more ❤️</span>
+        </p>
+        <div class="meter-box anim-fade delay-3">
+          <div class="meter-header">
+            <span class="meter-label">MISS YOU METER</span>
+            <span class="meter-pct" id="meterPercent">0%</span>
+          </div>
+          <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+        </div>
+        <p class="cheeky-caption anim-fade delay-4">Yeah… this is getting embarrassing 😭❤️</p>
+        <div class="btn-wrap anim-fade delay-5">
+          <button class="romantic-btn" onclick="startPhotoScreen()">Next 👀</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen3" class="screen">
+      <div class="polaroid-wrapper">
+        <div class="counter-badge" id="photoCounter">1 / 9</div>
+        <div class="polaroid-frame" id="polaroidCard">
+          <div class="polaroid-pin">📌</div>
+          <div class="polaroid-img-container">
+            <img id="polaroidImg" src="assets/photo1.jpg" alt="Memory with Bhumika" />
+          </div>
+          <p class="polaroid-caption" id="polaroidCaption">I miss this smile❤️</p>
+        </div>
+        <div class="photo-controls">
+          <button id="nextPhotoBtn" class="romantic-btn small-btn" onclick="nextPhoto()">Next memory ✨</button>
+        </div>
+        <div id="photoFinalMsg" class="final-photo-note hidden">
+          <h2 class="glow-txt">I MISS YOU. ❤️</h2>
+          <button class="romantic-btn glow-heartbeat" onclick="goToScreen(4)">There's one more thing…</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen4" class="screen dark-theme">
+      <div class="envelope-scene">
+        <p class="envelope-header anim-fade">
+          For Bhumika,<br />
+          <span>whenever I miss you❤️</span>
+        </p>
+        <div class="envelope-container" id="envelopeWrapper" onclick="openEnvelope()">
+          <div class="envelope" id="envelope">
+            <div class="envelope-flap" id="flap"></div>
+            <div class="envelope-pocket"></div>
+            <div class="envelope-seal" id="seal">💌<br><small>TAP ME</small></div>
+            <div class="letter-sheet" id="letterSheet">
+              <div class="letter-lines">
+                <p class="letter-text" id="typewriterText"></p>
+                <div id="letterFollowup" class="letter-footer hidden">
+                  <p class="still-not-done">Still not done…</p>
+                  <button class="romantic-btn small-btn" onclick="goToScreen(5)">One more thing ❤️</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screen5" class="screen final-theme">
+      <div class="final-glow-container">
+        <div class="final-content fade-in-flow">
+          <h1 class="callig-name">Bhumika…</h1>
+          <div class="msg-block msg-1">
+            <p>Even after talking to you the whole day…</p>
+            <p class="highlight-line">“I still want your presence”</p>
+          </div>
+          <div class="msg-block msg-2">
+            <p>Because apparently,</p>
+            <p class="quote-grand">one conversation with you<br>is never enough for me 🥺❤️</p>
+          </div>
+          <div class="msg-block msg-3"><h2 class="heart-pulse-text">I miss you ❤️</h2></div>
+          <div class="final-action msg-4">
+            <p class="talk-prompt">Come talk to me again? 🥺</p>
+            <a href="https://wa.me/" id="talkLink" class="romantic-btn cta-glow">Talk to me ❤️</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
